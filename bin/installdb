@@ -1,0 +1,38 @@
+"use strict";
+
+const mongoose = require("mongoose");
+const conn = mongoose.connection;
+const Anuncio = require("../models/Anuncio");
+
+//setting anuncios.json into array
+const anunciosArray = require('../utilities/anuncios.json')
+
+
+//setting error event
+conn.on('error', err => {
+  console.log('Connection error', err);
+  process.exit(1);
+});
+
+
+//setting open event
+conn.once("open", () => {
+  console.log("MongoDB now Connected", mongoose.connection.name);
+  
+  mongoose.connection.db.dropDatabase(function(err, result) {
+  	if(err){
+  		console.log("An error occurred while inserting",err)
+      process.exit(1)
+    }
+    console.log("DataBase has been dropped");
+
+    Anuncio.insertMany(anunciosArray,function(err,docs){
+      console.log("All following data has been inserted into the db",docs)
+    	process.exit()
+  	})
+
+  });
+});
+
+// Connect to MongoDB
+mongoose.connect("mongodb://localhost/nodepop");

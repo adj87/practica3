@@ -1,0 +1,5 @@
+[{"nombre":"Jeep cheeroke","venta":false,"precio":236,"foto":"images/jeep","tags":["lifestyle","motor"]},
+{"nombre":"PS One","venta":false,"precio":155,"foto":"images/psone","tags":["mobile"]},
+{"nombre":"PC portatil","venta":false,"precio":498,"foto":"images/laptop","tags":["mobile","work"]},
+{"nombre":"Bicicleta","venta":true,"precio":176,"foto":"images/bicicleta","tags":["lifestyle"]},
+{"nombre":"Iphone SE","venta":false,"precio":440,"foto":"images/iphonese","tags":["lifestyle", "mobile"]}]

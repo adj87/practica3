@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>Welcome to <%= title %></h2>
+    <h3><%= subtitle %></h3>
+    <table style="width:100%">
+      <thead>
+        <tr style="font-weight: bold">
+          <td>Nombre</td>
+          <td>Se vende /Se busca</td>
+          <td>Precio</td>
+          <td>Foto</td>
+          <td>tags</td>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <% anuncios.forEach(function(anuncio){ %>
+          <tr>
+            <td><%- anuncio.nombre %></td>
+            <td><%- anuncio.venta %></td>
+            <td><%- anuncio.precio %></td>
+            <td><img src="/<%- anuncio.foto %>.jpg" style="width:100px"></td>
+            <td><%- anuncio.tags %></td>
+        </tr>
+        <% }); %>
+
+      </tbody>
+    </table>
+  </body>
+</html>
